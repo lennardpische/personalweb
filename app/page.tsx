@@ -49,36 +49,36 @@ export default function HomePage() {
   return (
     <div className="max-w-[60ch] mx-auto w-full">
       {/* Hero: image and name aligned */}
-      <section className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mb-10">
-        <div className="w-full max-w-[200px] sm:max-w-[240px] shrink-0">
+      <section className="flex flex-col sm:flex-row items-center gap-8 sm:gap-10 mb-12">
+        <div className="w-40 h-52 sm:w-44 sm:h-56 shrink-0 overflow-hidden rounded-[50%] shadow-xl shadow-sky-950/50 ring-2 ring-sky-400/30 ring-offset-2 ring-offset-[#0f172a] transition-transform duration-300 hover:scale-[1.02]">
           <Image
-            src="/image_contours_copy.png"
+            src="/image_contours_copy_1.png"
             alt="Lennard Pische"
-            width={280}
-            height={280}
-            className="w-full h-auto object-contain"
+            width={176}
+            height={224}
+            className="w-full h-full object-cover"
           />
         </div>
-        <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-1">
+        <div className="flex flex-col items-center sm:items-start text-center sm:text-left min-w-0">
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-100 mb-2">
             Lennard Pische
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-300 text-lg">
             Applied Mathematics & Economics @Harvard
           </p>
         </div>
       </section>
 
-      <p className="text-gray-700 leading-snug mb-12 flex flex-wrap items-center gap-x-3 gap-y-1">
+      <p className="text-gray-200 leading-snug mb-12 flex flex-wrap items-center gap-x-3 gap-y-1">
         <span className="inline-flex items-center gap-1.5">
-          <svg className="w-4 h-4 text-gray-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <svg className="w-4 h-4 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
             <rect width="20" height="16" x="2" y="4" rx="2" />
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
           </svg>
-          <a href="mailto:lenny_pische@college.harvard.edu" className="text-blue-500 hover:text-blue-700">lenny_pische@college.harvard.edu</a>
+          <a href="mailto:lenny_pische@college.harvard.edu" className="text-sky-400 hover:text-sky-300">lenny_pische@college.harvard.edu</a>
         </span>
-        <span className="inline-flex items-center gap-1.5 text-gray-700">
-          <svg className="w-4 h-4 text-gray-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <span className="inline-flex items-center gap-1.5 text-gray-200">
+          <svg className="w-4 h-4 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
@@ -88,18 +88,18 @@ export default function HomePage() {
 
       {/* Scrollable Experiences */}
       <section className="mb-12">
-        <h2 className="text-gray-800 font-medium mt-8 mb-3 text-xl">Experiences</h2>
+        <h2 className="text-gray-200 font-medium mt-8 mb-3 text-xl">Experiences</h2>
         <div className="scroll-experiences overflow-x-auto pb-4 -mx-2 px-2 flex gap-4 snap-x snap-mandatory">
           {EXPERIENCES.map((exp, i) => (
             <article
               key={i}
-              className="min-w-[280px] max-w-[280px] snap-start rounded-lg border border-gray-200 bg-gray-50/50 p-4 shrink-0"
+              className="min-w-[280px] max-w-[280px] snap-start rounded-lg border border-gray-600 bg-slate-800/50 p-4 shrink-0"
             >
-              <p className="font-medium text-gray-900">{exp.title}</p>
-              <p className="text-sm text-gray-500 mt-0.5">
+              <p className="font-medium text-gray-100">{exp.title}</p>
+              <p className="text-sm text-gray-400 mt-0.5">
                 {exp.org}{exp.location ? ` · ${exp.location}` : ''} · {exp.period}
               </p>
-              <p className="text-sm text-gray-600 mt-2 leading-snug line-clamp-4">
+              <p className="text-sm text-gray-300 mt-2 leading-snug line-clamp-4">
                 {exp.description}
               </p>
             </article>

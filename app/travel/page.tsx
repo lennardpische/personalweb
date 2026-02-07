@@ -18,7 +18,7 @@ function PhotoGrid({ count = 6 }: { count?: number }) {
       {Array.from({ length: count }, (_, i) => (
         <div
           key={i}
-          className="aspect-square rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 text-sm"
+          className="aspect-square rounded-lg bg-slate-800/50 border border-gray-600 flex items-center justify-center text-gray-500 text-sm"
         >
           Photo
         </div>
@@ -30,17 +30,17 @@ function PhotoGrid({ count = 6 }: { count?: number }) {
 export default function TravelPage() {
   return (
     <div className="max-w-[60ch] mx-auto w-full">
-      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-900">
+      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-100">
         Travel & Pictures
       </h1>
-      <p className="text-gray-700 leading-snug mb-10">
+      <p className="text-gray-200 leading-snug mb-10">
         Photos from trips and everyday moments.
       </p>
 
       <section className="space-y-10">
         {TRIPS.map((trip) => (
           <div key={trip.id}>
-            <h2 className="text-gray-900 font-medium text-xl mb-3">{trip.name}</h2>
+            <h2 className="text-gray-200 font-medium text-xl mb-3">{trip.name}</h2>
             <PhotoGrid />
           </div>
         ))}

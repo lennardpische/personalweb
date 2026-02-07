@@ -65,19 +65,19 @@ const SEMESTERS: { term: string; courses: (Course | null)[] }[] = [
 export default function EducationPage() {
   return (
     <div className="max-w-[60ch] mx-auto w-full">
-      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-900 mb-10">
+      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-100 mb-10">
         Education
       </h1>
 
-      <section className="mb-10 space-y-6 text-gray-700 text-sm leading-snug">
+      <section className="mb-10 space-y-6 text-gray-200 text-sm leading-snug">
         <div className="flex gap-3 items-center">
           <img
             src="/Harvard_University_coat_of_arms.svg"
             alt=""
-            className="w-7 h-7 object-contain shrink-0"
+            className="w-7 h-7 object-contain shrink-0 opacity-90"
           />
           <div>
-            <p className="font-medium text-gray-900">Harvard University</p>
+            <p className="font-medium text-gray-100">Harvard University</p>
             <p>Cambridge, MA</p>
             <p>A.B. Applied Mathematics & Economics · May 2027</p>
           </div>
@@ -86,27 +86,27 @@ export default function EducationPage() {
           <img
             src="/fudan.jpeg"
             alt=""
-            className="w-7 h-7 object-contain shrink-0 rounded-sm"
+            className="w-7 h-7 object-contain shrink-0 rounded-sm opacity-90"
           />
           <div>
-            <p className="font-medium text-gray-900">Fudan University</p>
+            <p className="font-medium text-gray-100">Fudan University</p>
             <p>Shanghai, China · Harvard Summer School Jun – Aug 2025</p>
           </div>
         </div>
       </section>
 
       <section>
-        <h2 className="text-gray-800 font-medium text-lg mb-4">Courses</h2>
+        <h2 className="text-gray-200 font-medium text-lg mb-4">Courses</h2>
         <div className="space-y-8">
           {SEMESTERS.map((sem) => (
             <div key={sem.term}>
-              <h3 className="text-gray-600 font-medium text-sm mb-2">{sem.term}</h3>
+              <h3 className="text-gray-400 font-medium text-sm mb-2">{sem.term}</h3>
               <ul className="space-y-1.5 text-sm">
                 {sem.courses.map((course, i) =>
                   course ? (
-                    <li key={i} className="text-gray-700 flex flex-wrap gap-x-2 gap-y-0">
+                    <li key={i} className="text-gray-200 flex flex-wrap gap-x-2 gap-y-0">
                       {course.code !== '—' && (
-                        <span className="text-gray-500 shrink-0 font-medium">{course.code}</span>
+                        <span className="text-gray-400 shrink-0 font-medium">{course.code}</span>
                       )}
                       <span>{course.topic}</span>
                     </li>

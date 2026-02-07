@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.className}`}>
-      <body className="antialiased tracking-tight bg-white text-gray-900">
+      <body className="antialiased tracking-tight bg-[#0f172a] text-gray-100">
         <Header />
         <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 px-8 pb-8">
           <main className="max-w-[60ch] mx-auto w-full space-y-6">
@@ -41,41 +41,41 @@ export default function RootLayout({
 
 function Header() {
   return (
-    <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
+    <header className="sticky top-0 z-10 bg-[#0f172a] border-b border-gray-600">
       <div className="max-w-[60ch] mx-auto w-full px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 no-underline text-gray-900">
-          <span className="w-10 h-10 rounded-full bg-sky-300 text-sky-900 flex items-center justify-center text-sm font-semibold shrink-0 border-2 border-black">
+        <Link href="/" className="flex items-center gap-3 no-underline text-gray-100">
+          <span className="w-10 h-10 rounded-full bg-sky-400 text-sky-950 flex items-center justify-center text-sm font-semibold shrink-0 border-2 border-sky-200">
             LP
           </span>
         </Link>
         <nav className="flex items-center gap-6">
           <a
             href="mailto:lenny_pische@college.harvard.edu"
-            className="bg-sky-100 hover:bg-sky-200 text-sky-900 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200"
+            className="bg-sky-500 hover:bg-sky-400 text-white rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200"
           >
             Contact
           </a>
           <Link
             href="/portfolio"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+            className="text-gray-400 hover:text-gray-100 transition-colors duration-200 text-sm font-medium"
           >
             Portfolio
           </Link>
           <Link
             href="/travel"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+            className="text-gray-400 hover:text-gray-100 transition-colors duration-200 text-sm font-medium"
           >
             Travel
           </Link>
           <Link
             href="/education"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+            className="text-gray-400 hover:text-gray-100 transition-colors duration-200 text-sm font-medium"
           >
             Education
           </Link>
           <Link
             href="/blog"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+            className="text-gray-400 hover:text-gray-100 transition-colors duration-200 text-sm font-medium"
           >
             Blog
           </Link>
@@ -127,7 +127,7 @@ function Footer() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors duration-200"
+            className="flex items-center gap-2 text-gray-400 hover:text-gray-100 transition-colors duration-200"
           >
             {link.icon}
             <span>{link.name}</span>
