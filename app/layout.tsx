@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   title: {
-    default: 'John Smith',
-    template: '%s | John Smith'
+    default: 'Lennard Pische',
+    template: '%s | Lennard Pische'
   },
-  description: 'My portfolio, blog, and personal website.'
+  description: 'Passionate about mathematics, computer science, and minimalist design.'
 };
 
 export default function RootLayout({
@@ -24,25 +25,48 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.className}`}>
-      <body className="antialiased tracking-tight">
-        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 dark:bg-zinc-950 bg-white text-gray-900 dark:text-zinc-200">
+      <body className="antialiased tracking-tight bg-white text-gray-900">
+        <Header />
+        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 px-8 pb-8">
           <main className="max-w-[60ch] mx-auto w-full space-y-6">
             {children}
           </main>
           <Footer />
-          <Analytics />
         </div>
+        <Analytics />
       </body>
     </html>
   );
 }
 
+function Header() {
+  return (
+    <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
+      <div className="max-w-[60ch] mx-auto w-full px-8 py-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-3 no-underline text-gray-900">
+          <span className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold shrink-0">
+            LP
+          </span>
+        </Link>
+        <nav>
+          <Link
+            href="/portfolio"
+            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+          >
+            Portfolio
+          </Link>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
 function Footer() {
   const links = [
-    { name: '@johnsmith', url: 'https://x.com/johnsmith' },
-    { name: 'youtube', url: 'https://www.youtube.com/@johnsmith' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/johnsmith' },
-    { name: 'github', url: 'https://github.com/johnsmith' }
+    { name: 'x', url: '#' },
+    { name: 'youtube', url: '#' },
+    { name: 'linkedin', url: '#' },
+    { name: 'github', url: '#' }
   ];
 
   return (

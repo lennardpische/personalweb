@@ -111,3 +111,20 @@ table {
   white-space: nowrap;
   text-align: left;
 }
+
+/* Scrollable experiences strip */
+.scroll-experiences {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+.scroll-experiences::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-experiences::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-experiences::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 3px;
+}
