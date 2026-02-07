@@ -69,8 +69,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <p className="text-gray-700 leading-snug mb-12">
-        Passionate about mathematics, computer science, and minimalist design.
+      <p className="text-gray-700 leading-snug mb-12 flex flex-wrap items-center gap-x-3 gap-y-1">
+        <span className="inline-flex items-center gap-1.5">
+          <svg className="w-4 h-4 text-gray-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          <a href="mailto:lenny_pische@college.harvard.edu" className="text-blue-500 hover:text-blue-700">lenny_pische@college.harvard.edu</a>
+        </span>
+        <span className="inline-flex items-center gap-1.5 text-gray-700">
+          <svg className="w-4 h-4 text-gray-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Cambridge, MA — Rome, Italy
+        </span>
       </p>
 
       {/* Scrollable Experiences */}
