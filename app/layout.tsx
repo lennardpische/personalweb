@@ -44,7 +44,7 @@ function Header() {
     <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
       <div className="max-w-[60ch] mx-auto w-full px-8 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 no-underline text-gray-900">
-          <span className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold shrink-0">
+          <span className="w-10 h-10 rounded-full bg-sky-300 text-sky-900 flex items-center justify-center text-sm font-semibold shrink-0 border-2 border-black">
             LP
           </span>
         </Link>
