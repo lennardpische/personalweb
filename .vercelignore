@@ -1,0 +1,3 @@
+# Never include version control in deploy
+.git
+.gitignore

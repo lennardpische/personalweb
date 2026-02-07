@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function MaintenancePage() {
   return (
-    <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4">
+    <div className="min-h-[70vh] w-full flex flex-col items-center justify-center text-center px-4 py-12">
       <div className="max-w-md">
         <h1 className="text-2xl sm:text-3xl font-semibold text-gray-100 mb-3">
           Under Maintenance

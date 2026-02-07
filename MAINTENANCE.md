@@ -4,27 +4,27 @@ The site can be put into maintenance mode so all traffic is redirected to a simp
 
 ## How it works
 
-- **Middleware** (`middleware.ts`) runs on each request. It checks the `MAINTENANCE_MODE` environment variable and, if set, redirects to `/maintenance`.
+- **Middleware** (`middleware.ts`) runs on each request. It checks `NEXT_PUBLIC_MAINTENANCE_MODE` (or `MAINTENANCE_MODE`) and, if set, redirects to `/maintenance`. On Vercel’s Edge you must use **`NEXT_PUBLIC_MAINTENANCE_MODE`** so the variable is available in middleware.
 - **Maintenance page** is at `/maintenance` (plain "Under Maintenance" message and contact link).
 
 ## Toggling maintenance
 
 Set the environment variable in your Vercel project (or in `.env.local` for local):
 
-- **On:** `MAINTENANCE_MODE=1` or `MAINTENANCE_MODE=true`
-- **Off:** unset the variable, or set `MAINTENANCE_MODE=0`
+- **On:** `NEXT_PUBLIC_MAINTENANCE_MODE=1` or `=true`
+- **Off:** unset the variable, or set `NEXT_PUBLIC_MAINTENANCE_MODE=0`
 
-In Vercel: **Project** → **Settings** → **Environment Variables** → add `MAINTENANCE_MODE` with value `1` for maintenance. Remove it or set to `0` to bring the site back. Changing env vars in Vercel usually requires a redeploy to take effect.
+In Vercel: **Project** → **Settings** → **Environment Variables** → add **`NEXT_PUBLIC_MAINTENANCE_MODE`** with value **`1`** for Production. Then **redeploy**. To bring the site back, set it to `0` or delete it and redeploy.
 
 ## Local testing
 
 In `.env.local`:
 
 ```bash
-MAINTENANCE_MODE=1
+NEXT_PUBLIC_MAINTENANCE_MODE=1
 ```
 
-Run the app and visit any route; you should be redirected to `/maintenance`. Remove the variable or set `MAINTENANCE_MODE=0` to turn maintenance off.
+Run the app and visit any route; you should be redirected to `/maintenance`. Remove the variable or set `NEXT_PUBLIC_MAINTENANCE_MODE=0` to turn maintenance off.
 
 ## Optional: bypass
 

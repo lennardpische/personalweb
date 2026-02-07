@@ -2,7 +2,10 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 function isMaintenanceMode(): boolean {
-  return process.env.MAINTENANCE_MODE === '1' || process.env.MAINTENANCE_MODE === 'true';
+  // Edge Runtime only sees NEXT_PUBLIC_* vars on Vercel
+  const value =
+    process.env.NEXT_PUBLIC_MAINTENANCE_MODE ?? process.env.MAINTENANCE_MODE ?? '';
+  return value === '1' || value === 'true';
 }
 
 export function middleware(request: NextRequest) {
