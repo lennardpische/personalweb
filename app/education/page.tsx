@@ -9,19 +9,19 @@ const SEMESTERS: { term: string; courses: (Course | null)[] }[] = [
   {
     term: 'Spring 2026',
     courses: [
-      { code: '—', topic: 'Data Science 2: Advanced Topics in Data Science' },
-      { code: '—', topic: 'Financial and Economic Crises of the 21st Century' },
-      { code: '—', topic: 'How Music Works: Engineering the Acoustical World' },
-      { code: '—', topic: 'Introduction to Statistical Inference' },
+      { code: 'APCOMP 209B', topic: 'Data Science 2: Advanced Topics in Data Science' },
+      { code: 'ECON 1746', topic: 'Financial and Economic Crises of the 21st Century' },
+      { code: 'GENED 1080', topic: 'How Music Works: Engineering the Acoustical World' },
+      { code: 'STAT 111', topic: 'Statistical Inference' },
     ],
   },
   {
     term: 'Fall 2025',
     courses: [
-      { code: 'APCOMP 209A', topic: 'Data Science 1: Introduction to Data Science' },
-      { code: 'APMTH 121', topic: 'Introduction to Optimization: Models and Methods' },
+      { code: 'APCOMP 209A', topic: 'Data Science 1 (graduate level)' },
+      { code: 'APMTH 121', topic: 'Optimization: Models and Methods' },
       { code: 'GENED 1120', topic: 'The Political Economy of Globalization' },
-      { code: 'STAT 110', topic: 'Introduction to Probability' },
+      { code: 'STAT 110', topic: 'Probability' },
     ],
   },
   {
@@ -37,7 +37,7 @@ const SEMESTERS: { term: string; courses: (Course | null)[] }[] = [
     term: 'Fall 2024',
     courses: [
       { code: 'ECON 1010A', topic: 'Intermediate Microeconomics' },
-      { code: 'ECON 1123', topic: 'Introduction to Econometrics' },
+      { code: 'ECON 1123', topic: 'Econometrics' },
       { code: 'GENED 1200', topic: 'Justice: Ethical Reasoning in Polarized Times' },
       { code: 'GOV 1790', topic: 'American Foreign Policy' },
     ],
@@ -54,7 +54,7 @@ const SEMESTERS: { term: string; courses: (Course | null)[] }[] = [
   {
     term: 'Fall 2023',
     courses: [
-      { code: 'COMPSCI 50', topic: 'Introduction to Computer Science' },
+      { code: 'COMPSCI 50', topic: 'Computer Science' },
       { code: 'EASTD 199', topic: 'China and the African Continent' },
       { code: 'GOV 50', topic: 'Data Science for the Social Sciences' },
       { code: 'MATH 22A', topic: 'Vector Calculus and Linear Algebra I' },
