@@ -1,27 +1,51 @@
 import Image from 'next/image';
 
-export default function HomePage() {
-  const experiences = [
-    {
-      title: 'Experience 1',
-      org: 'Placeholder',
-      period: '2024 – Present',
-      description: 'Short description of your role and impact.'
-    },
-    {
-      title: 'Experience 2',
-      org: 'Placeholder',
-      period: '2023 – 2024',
-      description: 'Short description of your role and impact.'
-    },
-    {
-      title: 'Experience 3',
-      org: 'Placeholder',
-      period: '2022 – 2023',
-      description: 'Short description of your role and impact.'
-    }
-  ];
+const EXPERIENCES = [
+  {
+    title: 'Undergraduate Research Team Lead — Prof. Gary King',
+    org: 'Institute for Quantitative Social Science (IQSS)',
+    location: 'Cambridge, MA',
+    period: 'Oct 2024 – Present',
+    description: 'Trained ML pipelines to detect and reduce conspiracy content online (10,000+ observations); increased classifier precision by 50%. Standardized glossaries and automated workflows; implemented validation and inter-annotator agreement diagnostics.',
+  },
+  {
+    title: 'Summer Fellow',
+    org: 'CSIS — Indonesia Bureau of Economic Research',
+    location: 'Jakarta, Indonesia',
+    period: 'Jun – Aug 2024',
+    description: 'Processed 15+ years of trade and foreign aid panel data in R/Stata; findings featured in policy brief. Synthesized 100+ sources; contributed analysis and visualizations to CSIS policy journal chapter.',
+  },
+  {
+    title: 'Course Assistant — GOV 50 (Data Science); ECON 1011B (Advanced Macroeconomics)',
+    org: 'Department of Government & Economics, Harvard University',
+    location: 'Cambridge, MA',
+    period: 'Sept 2024 – Present',
+    description: 'Led sections and office hours in R and advanced macroeconomic theory; supported ~25% improvement in student performance. Redesigned problem sets and instructional materials with faculty.',
+  },
+  {
+    title: 'Policy Associate; Deputy Director, Corporate Sponsorships',
+    org: 'Harvard Undergraduate Foreign Policy Initiative',
+    location: 'Cambridge, MA',
+    period: 'Jan 2024 – Oct 2024',
+    description: 'Co-led 5-person team on AI in nuclear regulation; authored waste management section of presentation to Nuclear Regulatory Commissioner. Drafted regulatory brief; built 20+ sponsor relationships.',
+  },
+  {
+    title: 'Director of Business Development',
+    org: 'Harvard Model United Nations',
+    location: 'Boston, MA',
+    period: 'Sept 2024 – Present',
+    description: 'Built relationships with 10+ corporate partners for 4,000-attendee conference. Negotiated sponsor contracts; reduced logistics costs 20%, increased revenue 10%.',
+  },
+  {
+    title: 'Staff Writer',
+    org: 'The Harvard Crimson',
+    location: 'Cambridge, MA',
+    period: 'Sept 2023 – Jan 2025',
+    description: 'Published 10+ investigative and editorial articles on campus governance; interviewed 500+ stakeholders. Prompted rescheduling of student government elections.',
+  },
+];
 
+export default function HomePage() {
   return (
     <div className="max-w-[60ch] mx-auto w-full">
       {/* Hero: image and name aligned */}
@@ -53,19 +77,22 @@ export default function HomePage() {
       <section className="mb-12">
         <h2 className="text-gray-800 font-medium mt-8 mb-3 text-xl">Experiences</h2>
         <div className="scroll-experiences overflow-x-auto pb-4 -mx-2 px-2 flex gap-4 snap-x snap-mandatory">
-          {experiences.map((exp, i) => (
+          {EXPERIENCES.map((exp, i) => (
             <article
               key={i}
               className="min-w-[280px] max-w-[280px] snap-start rounded-lg border border-gray-200 bg-gray-50/50 p-4 shrink-0"
             >
               <p className="font-medium text-gray-900">{exp.title}</p>
-              <p className="text-sm text-gray-500 mt-0.5">{exp.org} · {exp.period}</p>
-              <p className="text-sm text-gray-600 mt-2 leading-snug">{exp.description}</p>
+              <p className="text-sm text-gray-500 mt-0.5">
+                {exp.org}{exp.location ? ` · ${exp.location}` : ''} · {exp.period}
+              </p>
+              <p className="text-sm text-gray-600 mt-2 leading-snug line-clamp-4">
+                {exp.description}
+              </p>
             </article>
           ))}
         </div>
       </section>
-
     </div>
   );
 }

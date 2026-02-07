@@ -48,12 +48,30 @@ function Header() {
             LP
           </span>
         </Link>
-        <nav>
+        <nav className="flex items-center gap-6">
           <Link
             href="/portfolio"
             className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
           >
             Portfolio
+          </Link>
+          <Link
+            href="/travel"
+            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+          >
+            Travel
+          </Link>
+          <Link
+            href="/education"
+            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+          >
+            Education
+          </Link>
+          <Link
+            href="/blog"
+            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+          >
+            Blog
           </Link>
         </nav>
       </div>
