@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: 'Lennard Pische',
     template: '%s | Lennard Pische'
   },
-  description: 'Passionate about mathematics, computer science, and minimalist design.'
+  description: 'Lennard Pische — Applied Math & Economics @ Harvard. Research, portfolio, travel, and writing.'
 };
 
 export default function RootLayout({
