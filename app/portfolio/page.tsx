@@ -26,7 +26,7 @@ type ProjectStatus = 'active' | 'complete' | 'halted';
 const REPO_STATUS: Record<string, ProjectStatus> = {
   personalweb: 'active',
   SpotifyParser: 'halted',
-  FedSentinel: 'complete',
+  FedSentinel: 'active',
   AirTrafficLiberalization: 'complete',
   OptimalCarbonPricing: 'complete',
   SpotifyWrapped: 'halted',
@@ -56,16 +56,16 @@ export default async function PortfolioPage() {
 
   return (
     <div className="max-w-[60ch] mx-auto w-full">
-      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-100">
+      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-900">
         Portfolio
       </h1>
-      <p className="text-gray-200 leading-snug mb-8">
+      <p className="text-gray-700 leading-snug mb-8">
         Projects and code. More on{' '}
         <a
           href="https://github.com/lennardpische"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sky-400 hover:text-sky-300"
+          className="text-blue-500 hover:text-blue-700"
         >
           GitHub
         </a>
@@ -74,7 +74,7 @@ export default async function PortfolioPage() {
 
       <section className="space-y-5">
         {repos.length === 0 ? (
-          <p className="text-gray-400">No public repos to show yet.</p>
+          <p className="text-gray-600">No public repos to show yet.</p>
         ) : (
           repos.map((repo) => {
             const status = REPO_STATUS[repo.name] ?? 'complete';
@@ -82,15 +82,15 @@ export default async function PortfolioPage() {
             return (
               <article
                 key={repo.name}
-                className="border border-gray-600 rounded-lg p-4 bg-slate-800/50"
+                className="border border-gray-200 rounded-lg p-4 bg-gray-50/50"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h2 className="text-gray-100 font-medium text-lg">
+                  <h2 className="text-gray-900 font-medium text-lg">
                     <a
                       href={repo.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sky-400 hover:text-sky-300"
+                      className="text-blue-500 hover:text-blue-700"
                     >
                       {repo.name}
                     </a>
@@ -99,20 +99,20 @@ export default async function PortfolioPage() {
                     <span
                       className={`text-xs font-medium px-1.5 py-0.5 rounded ${
                         status === 'active'
-                          ? 'bg-green-900/60 text-green-200'
+                          ? 'bg-green-100 text-green-800'
                           : status === 'halted'
-                            ? 'bg-amber-900/60 text-amber-200'
-                            : 'bg-gray-700 text-gray-300'
+                            ? 'bg-amber-100 text-amber-800'
+                            : 'bg-gray-100 text-gray-600'
                       }`}
                     >
                       {status}
                     </span>
-                    <span className="text-gray-400 text-sm">
+                    <span className="text-gray-500 text-sm">
                       {repo.language ?? '—'} · {formatDate(repo.updated_at)}
                     </span>
                   </span>
                 </div>
-                <p className="text-gray-300 text-sm leading-snug mt-1">
+                <p className="text-gray-600 text-sm leading-snug mt-1">
                   {REPO_TAGLINES[repo.name] ??
                     repo.description ??
                     'Code and experiments.'}
@@ -122,7 +122,7 @@ export default async function PortfolioPage() {
                     href={repo.homepage!}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-sky-400 hover:text-sky-300 mt-1 inline-block"
+                    className="text-sm text-blue-500 hover:text-blue-700 mt-1 inline-block"
                   >
                     Live demo →
                   </a>

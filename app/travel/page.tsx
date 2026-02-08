@@ -1,47 +1,70 @@
+import Image from 'next/image';
+
+const TRIPS: { id: string; name: string; folder: string; images: string[] }[] = [
+  {
+    id: 'australia',
+    name: 'Australia',
+    folder: 'Australia_pics',
+    images: ['IMG_1251.jpeg', 'IMG_1279.JPG', 'IMG_1334.JPG', 'IMG_1365.JPG', 'IMG_1366.JPG', 'IMG_1392.JPG', 'IMG_1432.JPG', 'IMG_1504.JPG'],
+  },
+  {
+    id: 'thailand',
+    name: 'Thailand',
+    folder: 'Thailand_Pics',
+    images: ['IMG_1705.JPG', 'IMG_1716.JPG', 'IMG_1720.JPG', 'IMG_1725.JPG', 'IMG_1731.JPG', 'IMG_1739.JPG', 'IMG_1749.JPG', 'IMG_1750.JPG'],
+  },
+  {
+    id: 'singapore',
+    name: 'Singapore',
+    folder: 'singapore_pics',
+    images: ['IMG_1065.JPG', 'IMG_1808.JPG', 'IMG_1831.JPG', 'IMG_1835.JPG', 'IMG_1837.JPG', 'IMG_1839.JPG', 'IMG_1860.JPG'],
+  },
+  {
+    id: 'china',
+    name: 'China',
+    folder: 'china_pics',
+    images: ['IMG_1180.JPG', 'IMG_1577.JPG', 'IMG_1609.JPG', 'IMG_1613.JPG', 'IMG_1631.JPG', 'IMG_7988.JPG', 'IMG_8094.JPG', 'IMG_8155.JPG', 'IMG_8185.JPG', 'IMG_8193.JPG', 'IMG_8423.JPG', 'IMG_8510.JPG', 'IMG_8785.JPG'],
+  },
+  {
+    id: 'mexico',
+    name: 'Mexico',
+    folder: 'Mexico_pics',
+    images: ['IMG_0757.JPG', 'IMG_0785.JPG', 'IMG_0805.JPG', 'IMG_0808.JPG', 'IMG_0825.JPG', 'IMG_0843.JPG', 'IMG_0872.JPG', 'IMG_0873.JPG', 'IMG_0900.JPG', 'IMG_0985.JPG', 'IMG_1014.JPG'],
+  },
+];
+
 export const metadata = {
   title: 'Travel & Pictures',
   description: 'Travel and photography — Lennard Pische.',
 };
 
-const TRIPS = [
-  { id: 'australia', name: 'Australia' },
-  { id: 'thailand', name: 'Thailand' },
-  { id: 'singapore', name: 'Singapore' },
-  { id: 'china', name: 'China' },
-  { id: 'mexico', name: 'Mexico' },
-  { id: 'usa', name: 'USA' },
-] as const;
-
-function PhotoGrid({ count = 6 }: { count?: number }) {
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-      {Array.from({ length: count }, (_, i) => (
-        <div
-          key={i}
-          className="aspect-square rounded-lg bg-slate-800/50 border border-gray-600 flex items-center justify-center text-gray-500 text-sm"
-        >
-          Photo
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function TravelPage() {
   return (
     <div className="max-w-[60ch] mx-auto w-full">
-      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-100">
+      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-900">
         Travel & Pictures
       </h1>
-      <p className="text-gray-200 leading-snug mb-10">
+      <p className="text-gray-700 leading-snug mb-10">
         Photos from trips and everyday moments.
       </p>
 
-      <section className="space-y-10">
+      <section className="space-y-12">
         {TRIPS.map((trip) => (
           <div key={trip.id}>
-            <h2 className="text-gray-200 font-medium text-xl mb-3">{trip.name}</h2>
-            <PhotoGrid />
+            <h2 className="text-gray-900 font-medium text-xl mb-4">{trip.name}</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {trip.images.map((file) => (
+                <div key={file} className="aspect-square relative rounded-lg overflow-hidden bg-gray-100">
+                  <Image
+                    src={`/${trip.folder}/${file}`}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </section>
