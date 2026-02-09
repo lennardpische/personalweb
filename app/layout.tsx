@@ -7,7 +7,7 @@ import Link from 'next/link';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://next-mdx-blog.vercel.app'),
+  metadataBase: new URL('https://lennardpische.com'),
   alternates: {
     canonical: '/'
   },

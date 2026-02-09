@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { TravelGallery } from './TravelGallery';
 
 const TRIPS: { id: string; name: string; folder: string; images: string[] }[] = [
   {
@@ -48,26 +48,7 @@ export default function TravelPage() {
         Photos from trips and everyday moments.
       </p>
 
-      <section className="space-y-12">
-        {TRIPS.map((trip) => (
-          <div key={trip.id}>
-            <h2 className="text-gray-900 font-medium text-xl mb-4">{trip.name}</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {trip.images.map((file) => (
-                <div key={file} className="aspect-square relative rounded-lg overflow-hidden bg-gray-100">
-                  <Image
-                    src={`/${trip.folder}/${file}`}
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 50vw, 33vw"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </section>
+      <TravelGallery trips={TRIPS} />
     </div>
   );
 }
