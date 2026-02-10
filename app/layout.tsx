@@ -1,10 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import Link from 'next/link';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lennardpische.com'),
@@ -24,8 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className}`}>
-      <body className="antialiased tracking-tight bg-white text-gray-900">
+    <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased tracking-tight bg-white text-gray-900 font-sans">
         <Header />
         <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 px-8 pb-8">
           <main className="max-w-[60ch] mx-auto w-full space-y-6">
