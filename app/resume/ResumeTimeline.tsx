@@ -67,7 +67,7 @@ export function ResumeItem({
   location: string;
   role?: string;
   date: string;
-  bullets: string[];
+  bullets: readonly string[];
   degree?: string;
   program?: string;
 }) {
@@ -111,7 +111,7 @@ export function ProjectCard({
   title: string;
   course: string;
   date: string;
-  bullets: string[];
+  bullets: readonly string[];
   index?: number;
 }) {
   return (
