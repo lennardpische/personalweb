@@ -12,13 +12,23 @@ type Repo = {
   updated_at: string;
 };
 
-const REPO_TAGLINES: Record<string, string> = {
-  personalweb: 'This site — Next.js, TypeScript.',
-  FedSentinel: 'Federal reserve & sentiment analysis.',
-  SpotifyParser: 'Spotify data parsing & analysis. Halted — Spotify halted third-party API integrations in Jan 2025.',
-  AirTrafficLiberalization: 'Air traffic liberalization (academic / TeX).',
-  OptimalCarbonPricing: 'Optimal carbon pricing (academic / economics).',
-  SpotifyWrapped: 'Spotify Wrapped–style analytics.',
+const REPO_DESCRIPTIONS: Record<string, string> = {
+  personalweb:
+    'This site — Next.js, TypeScript, JavaScript. Built and updated with Cursor.',
+  FedSentinel:
+    'Analyzes Federal Reserve communications and news sentiment to track policy tone over time. Python, NLP, and public data.',
+  SpotifyParser:
+    'Parsed and analyzed Spotify listening history and playlists. Halted — API access was halted Jan 2026; will continue Feb 13.',
+  AirTrafficLiberalization:
+    'Academic paper on air traffic liberalization and market effects. Analysis in R; write-up with figures and references.',
+  OptimalCarbonPricing:
+    'Carbon pricing prediction using gradient boosted decision trees and log-linear modeling. Python.',
+  SpotifyWrapped:
+    'Personal “Spotify Wrapped”–style stats from listening history. Halted after Spotify’s API changes in 2026.',
+  AgePoliticalIdeology:
+    'Analysis of age and political ideology. R Markdown.',
+  'age-political-ideology':
+    'Analysis of age and political ideology. R Markdown.',
 };
 
 type ProjectStatus = 'active' | 'complete' | 'halted';
@@ -30,6 +40,26 @@ const REPO_STATUS: Record<string, ProjectStatus> = {
   AirTrafficLiberalization: 'complete',
   OptimalCarbonPricing: 'complete',
   SpotifyWrapped: 'halted',
+  AgePoliticalIdeology: 'complete',
+  'age-political-ideology': 'complete',
+};
+
+/** Override GitHub-detected language when it’s wrong or we want to be more specific. */
+const REPO_LANGUAGE: Record<string, string> = {
+  personalweb: 'JavaScript',
+  AirTrafficLiberalization: 'R',
+  OptimalCarbonPricing: 'Python',
+  AgePoliticalIdeology: 'R Markdown',
+  'age-political-ideology': 'R Markdown',
+};
+
+/** Override displayed date (e.g. last meaningful update or completion). */
+const REPO_DATE: Record<string, string> = {
+  AgePoliticalIdeology: 'Dec 2023',
+  'age-political-ideology': 'Dec 2023',
+  OptimalCarbonPricing: 'Dec 2025',
+  AirTrafficLiberalization: 'May 2025',
+  SpotifyParser: 'Jan 2026',
 };
 
 function formatDate(s: string) {
@@ -99,21 +129,21 @@ export default async function PortfolioPage() {
                     <span
                       className={`text-xs font-medium px-1.5 py-0.5 rounded ${
                         status === 'active'
-                          ? 'bg-green-100 text-green-800'
+                          ? 'bg-blue-100 text-blue-800'
                           : status === 'halted'
                             ? 'bg-amber-100 text-amber-800'
-                            : 'bg-gray-100 text-gray-600'
+                            : 'bg-green-100 text-green-800'
                       }`}
                     >
                       {status}
                     </span>
                     <span className="text-gray-500 text-sm">
-                      {repo.language ?? '—'} · {formatDate(repo.updated_at)}
+                      {REPO_LANGUAGE[repo.name] ?? repo.language ?? '—'} · {REPO_DATE[repo.name] ?? formatDate(repo.updated_at)}
                     </span>
                   </span>
                 </div>
                 <p className="text-gray-600 text-sm leading-snug mt-1">
-                  {REPO_TAGLINES[repo.name] ??
+                  {REPO_DESCRIPTIONS[repo.name] ??
                     repo.description ??
                     'Code and experiments.'}
                 </p>

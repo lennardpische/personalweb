@@ -1,6 +1,6 @@
 const SITE_URL = 'https://lennardpische.com';
 
-const ROUTES = ['', '/portfolio', '/travel', '/education', '/blog', '/maintenance'];
+const ROUTES = ['', '/portfolio', '/travel', '/education', '/resume', '/blog', '/maintenance'];
 
 export default function sitemap() {
   return ROUTES.map((route) => ({

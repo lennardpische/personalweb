@@ -74,6 +74,12 @@ function Header() {
             Education
           </Link>
           <Link
+            href="/resume"
+            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+          >
+            Resume
+          </Link>
+          <Link
             href="/blog"
             className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
           >
