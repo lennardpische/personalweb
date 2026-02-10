@@ -1,3 +1,5 @@
+import { ObfuscatedMailto } from '../components/ObfuscatedMailto';
+
 export const metadata = {
   title: 'Under Maintenance',
   description: 'Site is temporarily under maintenance.',
@@ -15,12 +17,13 @@ export default function MaintenancePage() {
         </p>
         <p className="text-gray-500 text-sm">
           Check back in a few minutes or contact{' '}
-          <a
-            href="mailto:lenny_pische@college.harvard.edu"
+          <ObfuscatedMailto
+            which="primary"
+            showEmail
             className="text-blue-500 hover:text-blue-700"
           >
-            lenny_pische@college.harvard.edu
-          </a>{' '}
+            us
+          </ObfuscatedMailto>{' '}
           if you need to get in touch.
         </p>
       </div>

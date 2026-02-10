@@ -4,7 +4,6 @@ export const RESUME = {
   name: 'Lennard Pische',
   contact: {
     location: 'Cambridge, MA',
-    email: 'lennardpische@outlook.com',
     linkedin: 'https://linkedin.com/in/lennard-pische',
     github: 'https://github.com/lennardpische',
   },

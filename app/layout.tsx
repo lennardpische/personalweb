@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import Link from 'next/link';
+import { ObfuscatedMailto } from './components/ObfuscatedMailto';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lennardpische.com'),
@@ -52,12 +53,12 @@ function Header() {
           </span>
         </Link>
         <nav className="flex items-center gap-6">
-          <a
-            href="mailto:lenny_pische@college.harvard.edu"
+          <ObfuscatedMailto
+            which="primary"
             className="bg-sky-100 hover:bg-sky-200 text-sky-900 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200"
           >
             Contact
-          </a>
+          </ObfuscatedMailto>
           <Link
             href="/portfolio"
             className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
