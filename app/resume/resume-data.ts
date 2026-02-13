@@ -13,7 +13,7 @@ export const RESUME = {
       location: 'Cambridge, MA',
       role: 'Undergraduate Research Team Lead — Prof. Gary King',
       date: 'Oct 2024 – Present',
-      logo: '/iqss.png',
+      logo: '/IQSS.png',
       bullets: [
         'ML pipelines and experimental workflows for research; data validation and team coordination.',
       ] as const,
@@ -31,7 +31,7 @@ export const RESUME = {
       location: 'Jakarta, Indonesia',
       role: 'Summer Fellow',
       date: 'Jun – Aug 2024',
-      logo: '/csis_indonesia_logo.png',
+      logo: '/CSIS_Indonesia_Logo.png',
       bullets: [
         'Trade and foreign aid panel data analysis; policy brief and chapter for CSIS journal.',
       ] as const,
@@ -43,7 +43,7 @@ export const RESUME = {
       location: '',
       role: 'Analyst',
       date: 'Jan 2026 – Present',
-      logo: '/bsglogofinal.png',
+      logo: '/BSGlogofinal.png',
       bullets: [
         'Strategy and behavioral insights for organizational decision-making.',
       ] as const,
