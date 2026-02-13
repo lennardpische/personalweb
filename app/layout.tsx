@@ -66,12 +66,6 @@ function Header() {
             Portfolio
           </Link>
           <Link
-            href="/travel"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
-          >
-            Travel
-          </Link>
-          <Link
             href="/education"
             className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
           >
@@ -81,7 +75,13 @@ function Header() {
             href="/resume"
             className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
           >
-            Resume
+            Experience
+          </Link>
+          <Link
+            href="/travel"
+            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+          >
+            Travel
           </Link>
           <Link
             href="/blog"

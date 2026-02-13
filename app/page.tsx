@@ -4,6 +4,7 @@ const HIGHLIGHTS = [
   { title: 'Research', line: 'AI for policy evaluation, 10k+ labels for RCTs @ IQSS' },
   { title: 'Policy', line: 'Summer Fellow @ CSIS Indonesia' },
   { title: 'Teaching', line: 'Course Assistant, Data Science & Macroeconomics' },
+  { title: 'Extracurricular', line: 'Strategy Analyst @ BSG' },
 ];
 
 export default function HomePage() {

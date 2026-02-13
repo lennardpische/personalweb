@@ -3,43 +3,39 @@ import {
   ResumeSection,
   ResumeCard,
   ResumeItem,
-  ProjectCard,
 } from './ResumeTimeline';
 
 export const metadata = {
-  title: 'Resume',
+  title: 'Experience',
   description:
-    'Lennard Pische — Education, experience, projects, and skills.',
+    'Lennard Pische — Experience and extracurriculars.',
 };
 
 export default function ResumePage() {
-  const { name, education, experience, projects, skills } = RESUME;
+  const { name, contact, experience, extracurriculars, skills } = RESUME;
 
   return (
     <div className="max-w-[56ch] mx-auto w-full">
       <header className="mb-10">
         <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-900">
-          {name}
+          Experience
         </h1>
+        <p className="text-gray-700 leading-snug">
+          More on{' '}
+          <a
+            href={contact.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-600 hover:text-sky-700"
+          >
+            LinkedIn
+          </a>
+          .
+        </p>
       </header>
 
       <div className="space-y-12">
-        <ResumeSection title="Education" delay={0}>
-          {education.map((ed, i) => (
-            <ResumeCard key={i} index={i}>
-              <ResumeItem
-                org={ed.org}
-                location={ed.location}
-                degree={'degree' in ed ? ed.degree : undefined}
-                program={'program' in ed ? ed.program : undefined}
-                date={ed.date}
-                bullets={ed.bullets}
-              />
-            </ResumeCard>
-          ))}
-        </ResumeSection>
-
-        <ResumeSection title="Relevant Experience" delay={0.05}>
+        <ResumeSection title="Relevant Experience" delay={0}>
           {experience.map((exp, i) => (
             <ResumeCard key={i} index={i}>
               <ResumeItem
@@ -48,25 +44,28 @@ export default function ResumePage() {
                 role={exp.role}
                 date={exp.date}
                 bullets={exp.bullets}
+                logo={'logo' in exp ? exp.logo : undefined}
               />
             </ResumeCard>
           ))}
         </ResumeSection>
 
-        <ResumeSection title="Projects" delay={0.1}>
-          {projects.map((proj, i) => (
-            <ProjectCard
-              key={i}
-              title={proj.title}
-              course={proj.course}
-              date={proj.date}
-              bullets={proj.bullets}
-              index={i}
-            />
+        <ResumeSection title="Extracurriculars" delay={0.05}>
+          {extracurriculars.map((ext, i) => (
+            <ResumeCard key={i} index={i}>
+              <ResumeItem
+                org={ext.org}
+                location={ext.location}
+                role={ext.role}
+                date={ext.date}
+                bullets={ext.bullets}
+                logo={'logo' in ext ? ext.logo : undefined}
+              />
+            </ResumeCard>
           ))}
         </ResumeSection>
 
-        <ResumeSection title="Skills" delay={0.15}>
+        <ResumeSection title="Skills" delay={0.1}>
           <ResumeCard index={0}>
             <dl className="text-sm space-y-2">
               <div>

@@ -62,6 +62,7 @@ export function ResumeItem({
   bullets,
   degree,
   program,
+  logo,
 }: {
   org: string;
   location: string;
@@ -70,13 +71,25 @@ export function ResumeItem({
   bullets: readonly string[];
   degree?: string;
   program?: string;
+  logo?: string;
 }) {
   return (
     <div className="space-y-1">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <div>
-          <span className="font-medium text-gray-900">{org}</span>
-          <span className="text-gray-500 text-sm"> · {location}</span>
+        <div className="flex items-center gap-3 min-w-0">
+          {logo && (
+            <img
+              src={logo}
+              alt=""
+              className="w-10 h-10 rounded-lg object-contain shrink-0 bg-gray-50 border border-gray-100"
+              width={40}
+              height={40}
+            />
+          )}
+          <div className="min-w-0">
+            <span className="font-medium text-gray-900">{org}</span>
+            {location && <span className="text-gray-500 text-sm"> · {location}</span>}
+          </div>
         </div>
         <span className="text-gray-500 text-sm shrink-0">{date}</span>
       </div>
@@ -92,11 +105,13 @@ export function ResumeItem({
           {program && !degree && !role && program}
         </p>
       )}
-      <ul className="list-disc list-inside text-gray-600 text-sm leading-snug space-y-1 mt-2 ml-1">
-        {bullets.map((b, i) => (
-          <li key={i}>{b}</li>
-        ))}
-      </ul>
+      {bullets.length > 0 && (
+        <ul className="list-disc list-inside text-gray-600 text-sm leading-snug space-y-1 mt-2 ml-1">
+          {bullets.map((b, i) => (
+            <li key={i}>{b}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
@@ -106,26 +121,41 @@ export function ProjectCard({
   course,
   date,
   bullets,
+  logo,
   index = 0,
 }: {
   title: string;
   course: string;
   date: string;
   bullets: readonly string[];
+  logo?: string;
   index?: number;
 }) {
   return (
     <ResumeCard index={index}>
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-        <span className="font-medium text-gray-900">{title}</span>
-        <span className="text-gray-500 text-sm">{date}</span>
+        <div className="flex items-center gap-3 min-w-0">
+          {logo && (
+            <img
+              src={logo}
+              alt=""
+              className="w-10 h-10 rounded-lg object-contain shrink-0 bg-gray-50 border border-gray-100"
+              width={40}
+              height={40}
+            />
+          )}
+          <span className="font-medium text-gray-900">{title}</span>
+        </div>
+        <span className="text-gray-500 text-sm shrink-0">{date}</span>
       </div>
-      <p className="text-sky-600 text-xs font-medium mb-2">{course}</p>
-      <ul className="list-disc list-inside text-gray-600 text-sm leading-snug space-y-1 ml-1">
-        {bullets.map((b, i) => (
-          <li key={i}>{b}</li>
-        ))}
-      </ul>
+      <p className="text-sky-600 text-xs font-medium">{course}</p>
+      {bullets.length > 0 && (
+        <ul className="list-disc list-inside text-gray-600 text-sm leading-snug space-y-1 mt-2 ml-1">
+          {bullets.map((b, i) => (
+            <li key={i}>{b}</li>
+          ))}
+        </ul>
+      )}
     </ResumeCard>
   );
 }

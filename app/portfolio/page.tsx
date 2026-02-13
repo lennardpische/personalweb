@@ -35,7 +35,7 @@ type ProjectStatus = 'active' | 'complete' | 'halted';
 
 const REPO_STATUS: Record<string, ProjectStatus> = {
   personalweb: 'active',
-  SpotifyParser: 'halted',
+  SpotifyParser: 'active',
   FedSentinel: 'active',
   AirTrafficLiberalization: 'complete',
   OptimalCarbonPricing: 'complete',
