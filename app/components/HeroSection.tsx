@@ -26,11 +26,11 @@ export function HeroSection() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
       >
-        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-2">
+        <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-stone-900 mb-1">
           Lennard Pische
         </h1>
-        <p className="text-gray-600 text-lg">
-          Applied Mathematics & Economics @Harvard
+        <p className="text-stone-500 text-sm">
+          Applied Mathematics & Economics @ Harvard
         </p>
       </motion.div>
     </section>

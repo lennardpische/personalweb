@@ -12,15 +12,15 @@ export default function HomePage() {
     <div className="max-w-[60ch] mx-auto w-full">
       <HeroSection />
 
-      <hr className="border-gray-200 my-10" role="separator" />
+      <hr className="border-stone-200/80 my-8" role="separator" />
 
-      <section className="mb-12">
-        <h2 className="text-gray-800 font-medium mb-4 text-xl">Highlights</h2>
-        <ul className="space-y-3">
+      <section className="mb-10">
+        <h2 className="text-stone-800 font-medium mb-3 text-base uppercase tracking-wide">Highlights</h2>
+        <ul className="space-y-2 text-sm">
           {HIGHLIGHTS.map((item, i) => (
             <li key={i} className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
-              <span className="font-medium text-gray-900 shrink-0">{item.title}</span>
-              <span className="text-gray-600 text-sm sm:text-base">{item.line}</span>
+              <span className="font-medium text-stone-900 shrink-0 w-24">{item.title}</span>
+              <span className="text-stone-600">{item.line}</span>
             </li>
           ))}
         </ul>

@@ -7,6 +7,24 @@ export const RESUME = {
     linkedin: 'https://linkedin.com/in/lennard-pische',
     github: 'https://github.com/lennardpische',
   },
+  education: [
+    {
+      org: 'Harvard University',
+      location: 'Cambridge, MA',
+      degree: 'A.B. Applied Mathematics & Economics · May 2027',
+      date: '',
+      logo: '/Harvard_University_coat_of_arms.svg',
+      bullets: [] as const,
+    },
+    {
+      org: 'Fudan University',
+      location: 'Shanghai, China',
+      program: 'Harvard Summer School Jun – Aug 2025',
+      date: '',
+      logo: '/fudan.jpeg',
+      bullets: [] as const,
+    },
+  ],
   experience: [
     {
       org: 'Institute for Quantitative Social Science (IQSS)',

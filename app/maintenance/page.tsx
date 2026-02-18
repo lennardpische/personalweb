@@ -20,7 +20,7 @@ export default function MaintenancePage() {
           <ObfuscatedMailto
             which="primary"
             showEmail
-            className="text-blue-500 hover:text-blue-700"
+            className="text-blue-800 hover:text-blue-900"
           >
             us
           </ObfuscatedMailto>{' '}

@@ -14,21 +14,24 @@ export function ResumeSection({
   title,
   children,
   delay = 0,
+  id,
 }: {
   title: string;
   children: ReactNode;
   delay?: number;
+  id?: string;
 }) {
   return (
     <motion.section
-      className="relative pl-6 border-l-2 border-sky-200 ml-1 pb-10 last:pb-0"
+      id={id}
+      className="relative pl-6 border-l-2 border-blue-200/80 ml-1 pb-10 last:pb-0"
       initial={{ opacity: 0, x: -8 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: '-30px' }}
       transition={{ duration: 0.35, delay }}
     >
-      <span className="absolute left-0 top-0 w-3 h-3 -translate-x-[7px] rounded-full bg-sky-400 border-2 border-white shadow-sm" />
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-sky-700 mb-4 -mt-0.5">
+      <span className="absolute left-0 top-0 w-3 h-3 -translate-x-[7px] rounded-full bg-blue-500/90 border-2 border-stone-50 shadow-sm" />
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-blue-800 mb-4 -mt-0.5">
         {title}
       </h2>
       <div className="space-y-6">{children}</div>
@@ -45,7 +48,7 @@ export function ResumeCard({
 }) {
   return (
     <motion.div
-      className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm shadow-gray-100/80"
+      className="rounded-lg border border-stone-200/90 bg-white p-4 shadow-sm shadow-stone-100/60"
       {...fadeIn}
       transition={{ ...fadeIn.transition, delay: index * 0.06 }}
     >
@@ -148,7 +151,7 @@ export function ProjectCard({
         </div>
         <span className="text-gray-500 text-sm shrink-0">{date}</span>
       </div>
-      <p className="text-sky-600 text-xs font-medium">{course}</p>
+      <p className="text-blue-700 text-xs font-medium">{course}</p>
       {bullets.length > 0 && (
         <ul className="list-disc list-inside text-gray-600 text-sm leading-snug space-y-1 mt-2 ml-1">
           {bullets.map((b, i) => (

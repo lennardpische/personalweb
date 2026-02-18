@@ -41,10 +41,10 @@ export const metadata = {
 export default function TravelPage() {
   return (
     <div className="max-w-[60ch] mx-auto w-full">
-      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-900">
-        Travel & Pictures
+      <h1 className="font-medium pt-2 pb-1 text-2xl text-stone-900">
+        Travel
       </h1>
-      <p className="text-gray-700 leading-snug mb-10">
+      <p className="text-stone-600 text-sm mb-8">
         Photos from trips and everyday moments.
       </p>
 

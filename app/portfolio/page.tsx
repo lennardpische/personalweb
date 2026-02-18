@@ -14,7 +14,7 @@ type Repo = {
 
 const REPO_DESCRIPTIONS: Record<string, string> = {
   personalweb:
-    'This site — Next.js, TypeScript, JavaScript. Built and updated with Cursor.',
+    'This site — Next.js, TypeScript. Built and updated with Cursor.',
   FedSentinel:
     'Analyzes Federal Reserve communications and news sentiment to track policy tone over time. Python, NLP, and public data.',
   SpotifyParser:
@@ -46,7 +46,7 @@ const REPO_STATUS: Record<string, ProjectStatus> = {
 
 /** Override GitHub-detected language when it’s wrong or we want to be more specific. */
 const REPO_LANGUAGE: Record<string, string> = {
-  personalweb: 'JavaScript',
+  personalweb: 'TypeScript',
   AirTrafficLiberalization: 'R',
   OptimalCarbonPricing: 'Python',
   AgePoliticalIdeology: 'R Markdown',
@@ -86,16 +86,16 @@ export default async function PortfolioPage() {
 
   return (
     <div className="max-w-[60ch] mx-auto w-full">
-      <h1 className="font-medium pt-4 pb-2 text-3xl text-gray-900">
+      <h1 className="font-medium pt-2 pb-1 text-2xl text-stone-900">
         Portfolio
       </h1>
-      <p className="text-gray-700 leading-snug mb-8">
+      <p className="text-stone-600 text-sm mb-6">
         Projects and code. More on{' '}
         <a
           href="https://github.com/lennardpische"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-500 hover:text-blue-700"
+          className="text-blue-800 hover:text-blue-900"
         >
           GitHub
         </a>
@@ -112,7 +112,7 @@ export default async function PortfolioPage() {
             return (
               <article
                 key={repo.name}
-                className="border border-gray-200 rounded-lg p-4 bg-gray-50/50"
+                className="border border-stone-200/90 rounded-lg p-4 bg-white/80"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h2 className="text-gray-900 font-medium text-lg">
@@ -120,7 +120,7 @@ export default async function PortfolioPage() {
                       href={repo.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-500 hover:text-blue-700"
+                      className="text-blue-800 hover:text-blue-900"
                     >
                       {repo.name}
                     </a>
@@ -131,7 +131,7 @@ export default async function PortfolioPage() {
                         status === 'active'
                           ? 'bg-blue-100 text-blue-800'
                           : status === 'halted'
-                            ? 'bg-amber-100 text-amber-800'
+                            ? 'bg-blue-100 text-blue-800'
                             : 'bg-green-100 text-green-800'
                       }`}
                     >
@@ -152,7 +152,7 @@ export default async function PortfolioPage() {
                     href={repo.homepage!}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-blue-500 hover:text-blue-700 mt-1 inline-block"
+                    className="text-sm text-blue-800 hover:text-blue-900 mt-1 inline-block"
                   >
                     Live demo →
                   </a>

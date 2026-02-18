@@ -29,9 +29,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased tracking-tight bg-white text-gray-900 font-sans">
+      <body className="antialiased tracking-tight bg-stone-50 text-stone-900 font-sans">
         <Header />
-        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 px-8 pb-8">
+        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-6 px-6 md:px-8 pb-8">
           <main className="max-w-[60ch] mx-auto w-full space-y-6">
             {children}
           </main>
@@ -45,48 +45,22 @@ export default function RootLayout({
 
 function Header() {
   return (
-    <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
-      <div className="max-w-[60ch] mx-auto w-full px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 no-underline text-gray-900">
-          <span className="w-10 h-10 rounded-full bg-sky-300 text-sky-900 flex items-center justify-center text-sm font-semibold shrink-0 border-2 border-black">
-            LP
-          </span>
+    <header className="sticky top-0 z-10 bg-stone-50/95 backdrop-blur border-b border-stone-200/80">
+      <div className="max-w-[60ch] mx-auto w-full px-6 md:px-8 py-3 flex items-center justify-between">
+        <Link href="/" className="no-underline text-stone-900 text-sm font-medium tracking-tight">
+          LP
         </Link>
-        <nav className="flex items-center gap-6">
-          <ObfuscatedMailto
-            which="primary"
-            className="bg-sky-100 hover:bg-sky-200 text-sky-900 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200"
-          >
-            Contact
-          </ObfuscatedMailto>
-          <Link
-            href="/portfolio"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
-          >
+        <nav className="flex items-center gap-5 text-sm text-stone-500">
+          <Link href="/portfolio" className="hover:text-stone-900 transition-colors">
             Portfolio
           </Link>
-          <Link
-            href="/education"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
-          >
-            Education
-          </Link>
-          <Link
-            href="/resume"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
-          >
+          <Link href="/resume" className="hover:text-stone-900 transition-colors">
             Experience
           </Link>
-          <Link
-            href="/travel"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
-          >
+          <Link href="/travel" className="hover:text-stone-900 transition-colors">
             Travel
           </Link>
-          <Link
-            href="/blog"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
-          >
+          <Link href="/blog" className="hover:text-stone-900 transition-colors">
             Blog
           </Link>
         </nav>
@@ -125,19 +99,22 @@ function Footer() {
   const links = [
     { name: 'GitHub', url: 'https://github.com/lennardpische', icon: <GitHubIcon /> },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/lennard-pische', icon: <LinkedInIcon /> },
-    { name: 'X', url: 'https://x.com/lenny_787', icon: <XIcon /> }
+    { name: 'X', url: 'https://x.com/lenny_787', icon: <XIcon /> },
   ];
 
   return (
-    <footer className="mt-12 text-center">
-      <div className="flex justify-center items-center gap-6 tracking-tight">
+    <footer className="mt-12 pt-6 border-t border-stone-200/80">
+      <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-stone-500">
+        <ObfuscatedMailto which="primary" className="hover:text-blue-800 transition-colors">
+          Contact
+        </ObfuscatedMailto>
         {links.map((link) => (
           <a
             key={link.name}
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors duration-200"
+            className="flex items-center gap-1.5 hover:text-blue-800 transition-colors"
           >
             {link.icon}
             <span>{link.name}</span>
